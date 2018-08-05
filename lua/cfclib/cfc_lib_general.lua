@@ -1,5 +1,5 @@
 print("Loading CFC Lib General...")
-if not CFCLib then return end
+CFCLib = CFCLib or {}
 
 -- General Functions
 -------------------------------------------------
