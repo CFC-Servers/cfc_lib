@@ -1,3 +1,4 @@
+print("Loading CFC Lib Pvp...")
 if not CFCLib then return end
 
 -- PvP Functions

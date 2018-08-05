@@ -1,3 +1,4 @@
+print("Loading CFC Lib Factions...")
 if not CFCLib then return end
 
 -- Faction Functions
