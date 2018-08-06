@@ -5,7 +5,17 @@ CFCLib = CFCLib or {}
 -------------------------------------------------
 
 function CFCLib.getFactionForPlayer(ply)
+    if not ply:IsInFaction() then return {} end
 
+    local id = ply:GetFactionID()
+    local name = nil
+    local rank = ply:GetFactionRank()
+
+    return {
+        id = factionID,
+        name = name,
+        rank = rank
+    }
 end
 
 function CFCLib.getPlayersInFaction(factionProperty)
@@ -21,3 +31,4 @@ function CFCLib.getOnlineFactioneers()
 end
 
 -------------------------------------------------
+
