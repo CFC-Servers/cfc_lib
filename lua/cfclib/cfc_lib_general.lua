@@ -4,7 +4,7 @@ CFCLib = CFCLib or {}
 -- General Functions
 -------------------------------------------------
 
-local cfcHookPrefix = "CFC-"
+local cfcHookPrefix = "CFC_"
 function CFCLib.generateCFCHook(hookName)
 	return cfcHookPrefix .. hookName
 end
