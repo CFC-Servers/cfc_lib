@@ -1,0 +1,59 @@
+require "moonscript"
+
+export CFCLib
+CFCLib = {}
+
+CFCLib.Sum = (toSum) -> fold(toSum, (a,b) -> a + b)
+CFCLib.Average = (toAverage) -> CFCLib.Sum( toAverage ) / #toAverage
+CFCLib.IsValidPlayer = (ply) -> ply.IsValid! and ply.IsPlayer!
+CFCLib.GenerateCFCHook = (hookname) -> "CFC_#{hookname}"
+CFCLib.AlertPlayer = ( ply, addonName, message ) -> ply.ChatPrint( "[#{addonName}] #{message}") 
+CFCLib.GetAveragePing = CFCLib.Average [p.Ping! for p in player.GetHumans!]
+CFCLib.PlayerIsInPvp = (ply) -> ply.GetNWBool( "CFC_PvP_Mode", false )
+CFCLib.PlayerIsInBuild = (ply) -> ~CFCLib.PlayerIsInPvp( ply )
+CFCLib.GetPlayersInPvp = -> [ply for ply in player.GetHumans! if CFCLib.PlayerIsInPvp ply]
+CFCLib.GetPlayersInBuild = -> [ply for ply in player.GetHumans! if CFCLib.PlayerIsInBuild ply]
+CFCLib.PlayerHasSpawnProtection = (ply) -> ply.GetNWBool
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- TESTS
+playborp = {
+    IsValid: -> true,
+    IsPlayer: -> true
+}
+
+print( CFCLib.IsValidPlayer( playborp ) )
